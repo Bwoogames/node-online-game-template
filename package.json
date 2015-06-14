@@ -1,11 +1,11 @@
 {
-  "name": "your-game-name-here",
+  "name": "my-agar.io",
   "version": "1.0.0",
-  "description": "Game description here",
+  "description": "My agar io",
   "main": "server/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server/server.js"
   },
-  "author": "Your Name"
+  "author": "BwooGames"
 }
