@@ -4,12 +4,15 @@ Game.prototype.handleNetwork = function(socket) {
   console.log('Game connection process here');
   console.log(socket);
   // This is where you receive all socket messages
-}
+  socket.on('message', function(message) {
+	console.log(message);  
+  });
+};
 
 Game.prototype.handleLogic = function() {
   console.log('Game is running');
   // This is where you update your game logic
-}
+};
 
 Game.prototype.handleGraphics = function(gfx) {
   // This is where you draw everything
@@ -23,4 +26,4 @@ Game.prototype.handleGraphics = function(gfx) {
   gfx.lineWidth = 2;
   gfx.fillText('Now playing...', screenWidth / 2, screenHeight / 2);
   gfx.strokeText('Now playing...', screenWidth / 2, screenHeight / 2);
-}
+};

@@ -12,6 +12,7 @@ c.width = screenWidth; c.height = screenHeight;
 var KEY_ENTER = 13;
 
 var game = new Game();
+var character = new Character();
 
 function startGame() {
     playerName = playerNameInput.value.replace(/(<([^>]+)>)/ig, '');
@@ -19,6 +20,7 @@ function startGame() {
     document.getElementById('startMenuWrapper').style.display = 'none';
     socket = io();
     SetupSocket(socket);
+    SetupCharacter();
     animloop();
 }
 
@@ -62,6 +64,10 @@ function SetupSocket(socket) {
   game.handleNetwork(socket);
 }
 
+function SetupCharacter() {
+	character.createCharacter();
+}
+
 window.requestAnimFrame = (function(){
     return  window.requestAnimationFrame       ||
             window.webkitRequestAnimationFrame ||
@@ -78,7 +84,8 @@ function animloop(){
 
 function gameLoop() {
   game.handleLogic();
-  game.handleGraphics(canvas);
+  //game.handleGraphics(canvas);
+  character.handleGraphics(canvas);
 }
 
 window.addEventListener('resize', function() {
